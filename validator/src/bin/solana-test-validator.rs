@@ -348,6 +348,8 @@ fn main() {
     };
     let _logger_thread = redirect_stderr_to_file(logfile);
 
+    solana_core::validator::report_target_features();
+
     let socket_addr_space = SocketAddrSpace::new(matches.is_present("allow_private_addr"));
 >>>>>>> ee65ffb3c (test-validator: start logging asap)
     let cli_config = if let Some(config_file) = matches.value_of("config_file") {
